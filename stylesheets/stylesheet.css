@@ -244,6 +244,7 @@ a {
   .site-footer {
     font-size: 0.9rem; } }
     
+    <-- Begin Navigation styling -->
 #navSection
       {
         height:50px;
@@ -278,3 +279,4 @@ a {
         display:inline;
         padding:10px;       
       }
+      <-- End Navigation styling -->
