@@ -96,15 +96,11 @@
       </footer>
     </section>
     <script>
-      $(window).scroll(function () 
-      {
-        var fromTop = $(window).scrollTop();
-        var headerHeight = document.getElementById('header').clientHeight;
-        if(fromTop >= headerHeight)
-            {
-                $("#navSection").addClass("sticky");
-            }
-      });
+      $(window).on("scroll", function() {
+            var headerHeight = document.getElementById('header').clientHeight;
+            var fromTop = $(window).scrollTop();
+            $("#navSection").toggleClass("sticky", (fromTop > headerHeight));
+        });
     </script>
   </body>
 </html>
