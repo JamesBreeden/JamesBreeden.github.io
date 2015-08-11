@@ -16,7 +16,7 @@
       <h1 class="project-name">James Breeden</h1>
       <h2 class="project-tagline">Email: BreedenJamesW@gmail.com</h2>
     </section>
-    <section id="navSection" class="sticky">
+    <section id="navSection">
       <ul id="navUl">
         <li><a href="http://jamesbreeden.github.io">About Me</a></li>
         <li><a href="http://jamesbreeden.github.io/directoryProject">Directory Project</a></li>
@@ -96,11 +96,15 @@
       </footer>
     </section>
     <script>
-      $(window).on("scroll", function() {
-            var headerHeight = document.getElementById('header').clientHeight;
-            var fromTop = $(window).scrollTop();
-            $("navSection").toggleClass("sticky", (fromTop > headerHeight));
-        });
+      $(window).scroll(function () 
+      {
+        var fromTop = $(window).scrollTop();
+        var headerHeight = document.getElementById('header').clientHeight;
+        if(fromTop >= headerHeight)
+            {
+                $("#navSection").addClass("sticky");
+            }
+      });
     </script>
   </body>
 </html>
