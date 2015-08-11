@@ -246,26 +246,28 @@ a {
     
 #navSection
       {
+        height:50px;
+        padding:10px;
+        text-align:center;
         background-image: linear-gradient(120deg, #155799, #159957);
-        box-shadow: 0px 1px 50px #5E5E5E;
+        box-shadow: 0px 20px 50px #5E5E5E;
       }
 #navSection a
       {
-       text-align:center;
-       text-decoration:none;
-       color:white;
+        text-decoration:none;
+        color:white;
       } 
 #navSection a:hover 
       {
-       color:grey;
+        color:grey;
       }
 #navUl
       {
-       margin-top:0px;
-       list-style-type:none; 
+        margin-top:0px;
+        list-style-type:none; 
       }
 #navUl li 
       {
-       display:inline;
-       padding:10px;       
+        display:inline;
+        padding:10px;       
       }
