@@ -122,15 +122,19 @@
             </p>
             <p>
               This phonelist structure is meaningless to the user though.
-              Why would they want to see a long list of numbers?
+              Why would they want to see a long list of User IDs?
               They don't, but we will use that in a clever select statement to bring back the information of who is in their phonelist.
               We can use:
-                <pre>
-                  Select (pertinent information) 
-                  from ContactInfoTable 
-                    innerjoin Phonelist 
-                    on ContactInfoTable.ContactID = Phonelist.LoggedInUser
-                  where Phonelist.LoggedInUser = @LoggedInUser</pre>
+            </p>
+            <pre>
+              SELECT (pertinent information) 
+              FROM ContactInfoTable 
+                INNER JOIN Phonelist 
+                ON ContactInfoTable.ContactID = Phonelist.LoggedInUser
+              WHERE Phonelist.LoggedInUser = @LoggedInUser</pre>
+            <p>
+              This statement will bring back the information we want to display, 
+                using the phonelist table and the @loggedInUser parameter to only get what we need.
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
