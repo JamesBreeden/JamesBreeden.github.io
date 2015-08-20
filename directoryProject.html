@@ -106,6 +106,33 @@
                 query the DB for said user's personlized phonelist, 
                 and display it in a useful format.
             </p>
+            <p>
+              Creating the phonelist structure in the DB was actually quite simple.
+              It consisted of a two columns, one being the logged in user's ID,
+                and the other being the target's ID.
+              We load this into a model, and set bool value phonelistLoaded = true.
+              When the user adds or removes someone from the phonelist, we can set the bool back to false and reload it.
+              This will allow us to limit the number of queries we send to the database 
+              as well as save memory by avoiding duplicating information.
+            </p>
+            <p>
+              When loading the view, an if statement will check the value of phonelistLoaded.
+              If it's true, then we access the model for who's information we need to load.
+              Else we have to requery for the phonelist structure.
+            </p>
+            <p>
+              This phonelist structure is meaningless to the user though.
+              Why would they want to see a long list of numbers?
+              They don't, but we will use that in a clever select statement to bring back the information of who is in their phonelist.
+              We can use:
+                <pre>
+                  Select (pertinent information) 
+                  from ContactInfoTable 
+                    innerjoin Phonelist 
+                    on ContactInfoTable.ContactID = Phonelist.LoggedInUser
+                  where Phonelist.LoggedInUser = @LoggedInUser"
+                </pre>
+            </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
         <div class="accordion-section">
