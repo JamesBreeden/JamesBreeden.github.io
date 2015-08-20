@@ -57,12 +57,25 @@
           <a class="accordion-section-title" href="#accordion-2">Update Feature</a>
           <div id="accordion-2" class="accordion-section-content">
             <p>
-              There would also be an update view that populated textareas with the logged in users information, 	
-                allows them to change said information, 
-                and then send an update query back to the DB with the modified information.
+              There would also be an update view that uses Active Directory to determine who is logged in.
+              We can then use a select query with the logged-in user's ID as the target and 
+                populate the model with the logged in users information.
+              There are limitations to which fields users can update. 
+              For instance, they can't change their start date, title, department, or some other values.
+              For these values, we loaded them into labels.
+              The values that we did allow them to update, such as the orginations they are involved in,
+                any family members they wanted to list,
+                or their education history,
+                we loaded this information into textareas.
+              This will allow the user to modify the content loaded.
+              When we designed the layout for the body, 
+                we created the textareas inside a using statement linked to the actionresult in our controller.
+              This will allow us to 
               For usability, 
                 we also wanted to add a reset button to this page for when the user doesn't like the changed information 
                 and wants to reclaim the original values.
+              This was a simple addition.
+              Since the fields were created in the using statement, we just had to 
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
@@ -81,7 +94,7 @@
           <a class="accordion-section-title" href="#accordion-4">Admin Feature</a>
           <div id="accordion-4" class="accordion-section-content">
             <p>
-              Again, we will use Active Directory to determine who is logged in,
+              Similar to the "User Update" page and the personalized phonelist, we use Active Directory
                 and display the admin link if said logged in user is classified as an admin.
               The admin view would be similar to the update view.
               It would have the same behavior as far as updating information,
