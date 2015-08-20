@@ -61,7 +61,7 @@
               We can then use a select query with the logged-in user's ID as the target and 
                 populate the model with the logged in users information.
               There are limitations to which fields users can update. 
-              For instance, they can't change their start date, title, department, or some other values.
+              For instance, they can't change their start date, title, department, or several other values.
               For these values, we loaded them into labels.
               The values that we did allow them to update, such as the orginations they are involved in,
                 any family members they wanted to list,
@@ -70,12 +70,25 @@
               This will allow the user to modify the content loaded.
               When we designed the layout for the body, 
                 we created the textareas inside a using statement linked to the actionresult in our controller.
-              This will allow us to 
+              This will allow us to submit the values as parameters into a stored procedure via the SqlCommand class
+              supported in the .NET framework 4.5 and 4.6.
+            </p>
+            <p>
               For usability, 
                 we also wanted to add a reset button to this page for when the user doesn't like the changed information 
                 and wants to reclaim the original values.
               This was a simple addition.
-              Since the fields were created in the using statement, we just had to 
+              Since the fields were created in the using statement, we could reset the values without even reloading the page.
+            </p>
+            <p>
+              Another usability feature that we thought would help the user when updating their information is having the
+                update button initially disabled.
+              Using a combination of javascript and the onchange event, we can detect when the user has modified the textarea's
+                value and activate the button.
+              This will help both the user and the server/database.
+              The user will know that their changes have been submitted because the button will no longer be clickable.
+              The server will be happy because the user can't continuously mash the submit button,
+                and the DB will be happy because it won't constantly receive update queries with the same information.
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
