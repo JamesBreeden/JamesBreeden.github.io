@@ -36,13 +36,13 @@
         As a team, we decided to use ASP.NET MVC architectural pattern in Visual Studio 2013 to create the new directory. 
         This will allow us to use a combination of C#, HTML5, Razor, and JavaScript/JQuery. 
         In order to enforce version control, we used Team Foundation Server, commonly known as TFS. 
-        SSMS2012 was our got-to to maintain a sandbox database that contained our test information.
+        SSMS2012 was our got-to for maintaining a sandbox database that contained our test information.
       </p>
       <p>
         The first goal was to determine the project scope.
         With that done, a better view of what needs to be created begins to form.
         We wanted to get the functionality ironed out, then we can apply styling to spice it up.
-        As a team, we saw that there were several primary functions to be used.
+        As a team, we saw that there were several primary features to be used.
       </p>
       <div class="accordion">
         <div class="accordion-section">
@@ -52,8 +52,7 @@
               There would be a search feature that uses a select query to get the user's requested information from the DB.
             </p>
           </div><!--end .accordion-section-content-->
-        </div>
-        <!--end .accordion-section-->
+        </div><!--end .accordion-section-->
         <div class="accordion-section">
           <a class="accordion-section-title" href="#accordion-2">Update Feature</a>
           <div id="accordion-2" class="accordion-section-content">
@@ -66,20 +65,39 @@
                 and wants to reclaim the original values.
             </p>
           </div><!--end .accordion-section-content-->
-        </div>
-        <!--end .accordion-section-->
+        </div><!--end .accordion-section-->
         <div class="accordion-section">
           <a class="accordion-section-title" href="#accordion-3">Customized Phonelist Feature</a>
           <div id="accordion-3" class="accordion-section-content">
             <p>
               The third main feature we would be creating is the customized phonelist. 
-              Using Active Directory, determine the logged in user, 
+              Using Active Directory, we can determine the logged in user, 
                 query the DB for said user's personlized phonelist, 
                 and display it in a useful format.
             </p>
           </div><!--end .accordion-section-content-->
-        </div>
-        <!--end .accordion-section-->
+        </div><!--end .accordion-section-->
+        <div class="accordion-section">
+          <a class="accordion-section-title" href="#accordion-4">Admin Feature</a>
+          <div id="accordion-4" class="accordion-section-content">
+            <p>
+              Again, we will use Active Directory to determine who is logged in,
+                and display the admin link if said logged in user is classified as an admin.
+              The admin view would be similar to the update view.
+              It would have the same behavior as far as updating information,
+                it would just be able to update all the fields,
+                as well as upload a new profile image.
+              </p>
+              <p>
+              A feature that will need to be created for the administrator is adding a new record to the DB.
+              So far, we have used the view to modify an existing record.
+              I created the "Create New User" form in a using statement that was linked to the same ActionResult as the
+                "Update Record" form, however the submit button would send back a different value, 
+                causing an If statement to modify the behavior slightly.
+              This will allow us to re-use a lot of code, which is always a good thing.
+            </p>
+          </div><!--end .accordion-section-content-->
+        </div><!--end .accordion-section-->
       </div><!--end .accordion-->
       <p>
         <center>
