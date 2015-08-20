@@ -26,16 +26,31 @@
     </section>
     <section class="main-content">
       <p>
-        First off, the primary task; to recreate the Associate Directory. What does this mean? Basically, their current 
-        directory has an outdated interface, the pathing doesn't flow how a user would want, and the speed felt like it was 
-        a little lacking. They wanted a streamlined application that had a more modern feel and had an intuitive flow 
-        to the interaction. 
+        First off, the primary task; to recreate the Associate Directory. What does this mean? 
+        Basically, the current directory had an outdated interface, 
+          the pathing doesn't flow how a user would want, 
+          and the speed felt like it was a little lacking. 
+        They requested a streamlined application that had a more modern feel and had an intuitive flow to the interaction. 
       </p>
       <p>
-        We decided to use ASP.NET MVC architectural pattern in Visual Studio 2013 to create their new Directory. 
-        This will allow us to use a combination of C#, HTML5, Razor, and JavaScript/JQuery. In order to enforce version 
-        control, we used Team Foundation Server, commonly known as TFS. SSMS2012 was our got-to to maintain a sandbox database
-        that contained our test information.
+        As a team, we decided to use ASP.NET MVC architectural pattern in Visual Studio 2013 to create the new directory. 
+        This will allow us to use a combination of C#, HTML5, Razor, and JavaScript/JQuery. 
+        In order to enforce version control, we used Team Foundation Server, commonly known as TFS. 
+        SSMS2012 was our got-to to maintain a sandbox database that contained our test information.
+      </p>
+      <p>
+        The first goal was to determine the project scope.
+        With that done, a better view of what needs to be created begins to form.
+        We wanted to get the functionality ironed out, then we can apply styling to spice it up.
+        As a team, we saw that there were several primary functions to be used.
+        There would be a search feature that uses a select query to get the user's requested information from the DB.
+        There would also be an update view that populated textareas with the logged in users information, 	
+          allows them to change said information, and then send an update query back to the DB with the modified information.
+        For usability, we also wanted to add a reset button to this page for when the user doesn't like the changed information 
+          and wants to reclaim the original values.
+        The third main feature we would be creating is the customized phonebook. 
+        Using Active Directory, determine the logged in user, query the DB for said user's personlized phonelist, 
+          and display it in a useful format.
       </p>
       <p>
         <center>
