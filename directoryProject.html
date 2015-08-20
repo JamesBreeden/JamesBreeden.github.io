@@ -60,6 +60,8 @@
               There would also be an update view that uses Active Directory to determine who is logged in.
               We can then use a select query with the logged-in user's ID as the target and 
                 populate the model with the logged in users information.
+            </p>
+            <p>
               There are limitations to which fields users can update. 
               For instance, they can't change their start date, title, department, or several other values.
               For these values, we loaded them into labels.
@@ -68,6 +70,8 @@
                 or their education history,
                 we loaded this information into textareas.
               This will allow the user to modify the content loaded.
+            </p>
+            <p>
               When we designed the layout for the body, 
                 we created the textareas inside a using statement linked to the actionresult in our controller.
               This will allow us to submit the values as parameters into a stored procedure via the SqlCommand class
