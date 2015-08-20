@@ -150,7 +150,27 @@
                 as well as upload a new profile image.
               </p>
               <p>
-              A feature that will need to be created for the administrator is adding a new record to the DB.
+                When an admin uploads a new photo, 
+                  I created a process that checks to see if the user already has a profile image.
+                If they do, it will rename the old picture and 
+                  include the date/time in the photo so support staff can keep track of the changes easier.
+                Then it saves the new picture with the user's ID, and the day.month.hour.minute as the filename.
+                I thought about having it save as the old profile picture's name.
+                However this caused a problem with caching.
+                When the page would reload, it would still be getting the same name for their profile picture
+                  and then just access cache for the picture instead of using the new one.
+                I could have disabled caching to force it to always get the new picture, but this would be very expensive in
+                  terms of memory and time.
+                Instead, I had it save as a different name.
+                This will cause the web page to search for a new picture since the filename has changed.
+                Then we just have to update the model with the new filename for when we send it back to the database.
+              </p>
+              <p>
+                If they don't have profile picture, then the process is quite simple.
+                Upload the picture to the server and save the filename in the model for the DB update statement.
+              </p>
+              <p>
+              A feature that we also created for the administrator was adding a new record to the DB.
               So far, we have used the view to modify an existing record.
               I created the "Create New User" form in a using statement that was linked to the same ActionResult as the
                 "Update Record" form, however the submit button would send back a different value, 
