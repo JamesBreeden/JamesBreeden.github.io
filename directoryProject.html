@@ -49,7 +49,12 @@
           <a class="accordion-section-title" href="#accordion-1">Search Feature</a>
           <div id="accordion-1" class="accordion-section-content">
             <p>
-              There would be a search feature that uses a select query to get the user's requested information from the DB.
+              The first feature would be a search function that uses a select query 
+                to get the user's requested information from the DB.
+              We also wanted the user to be able to search from any view,
+                so we created the search bar in the _Layout.
+              This would eliminate clicks and page loads, 
+                making it feel like a more fluid experience.
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
@@ -111,6 +116,8 @@
               It consisted of a two columns, one being the logged in user's ID,
                 and the other being the target's ID.
               We load this into a model, and set bool value phonelistLoaded = true.
+            </p>
+            <p>
               When the user adds or removes someone from the phonelist, we can set the bool back to false and reload it.
               This will allow us to limit the number of queries we send to the database 
               as well as save memory by avoiding duplicating information.
@@ -153,10 +160,12 @@
                 When an admin uploads a new photo, 
                   I created a process that checks to see if the user already has a profile image.
                 If they do, it will rename the old picture and 
-                  include the date/time in the photo so support staff can keep track of the changes easier.
+                  include the date/time in the filename so support staff can keep track of the changes easier.
                 Then it saves the new picture with the user's ID, and the day.month.hour.minute as the filename.
                 I thought about having it save as the old profile picture's name.
-                However this caused a problem with caching.
+              </p>
+              <p>
+                However giving it the old picture's name caused a problem with caching.
                 When the page would reload, it would still be getting the same name for their profile picture
                   and then just access cache for the picture instead of using the new one.
                 I could have disabled caching to force it to always get the new picture, but this would be very expensive in
@@ -180,6 +189,27 @@
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
       </div><!--end .accordion-->
+      <p>
+        One more important thing to note is that when using any insert or update statements,
+          passing the new information in as variables instead of appended SQL statements is vital.
+        It removes the possiblity of SQL injection.
+        Instead of treating the input as individual characters,
+          it looks at it as a single entire string.
+        That way, if a devious person decides to use:
+        <pre>105; DROP TABLE Contacts</pre>
+        If this statement were to be run as an appended statement,
+          there goes all your information.
+        However if we parameterize there input,
+          They have now just saved a string that says "105; DROP TABLE Suppliers".
+      </p>
+      <p>
+        Another way to avoid SQL injection is using a "blacklist" set of words.
+        This method isn't best practice because now someone named Addison can't create their user 
+          because the keyword "add" has been blacklisted.
+        Plus catching every blacklisted word is difficult,
+          and if there are any updates to SQL methods, 
+          you now have to update this blacklist with the new keywords.
+      </p>
       <p>
         <center>
           <span>**</span>
