@@ -52,9 +52,22 @@
               The first feature would be a search function that uses a select query 
                 to get the user's requested information from the DB.
               We also wanted the user to be able to search from any view,
-                so we created the search bar in the _Layout.
+                so we created the search area in the _Layout.
               This would eliminate clicks and page loads, 
                 making it feel like a more fluid experience.
+            </p>
+            <p>
+              The user has 3 possible fields to search with; 
+                first name, last name, and department.
+              They can search with a single field, or any combination of the three.
+              The first and last names are textarea inputs, 
+                while the department is a dropdown list created dynamically by querying the DB.
+            </p>
+            <p>
+              Wrapping these inputs in a using statement linking to its ActionResult
+                sections it off so that the inputs cannot interfere with any other textareas.
+              This problem seemed to only arise in very specific scenarios,
+                but anytime the program breaks is not good.
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
@@ -190,17 +203,17 @@
         </div><!--end .accordion-section-->
       </div><!--end .accordion-->
       <p>
-        One more important thing to note is that when using any insert or update statements,
-          passing the new information in as variables instead of appended SQL statements is vital.
+        One more important thing to note is that when using any SQL statements,
+          passing the new information in as parameters instead of appended SQL statements is vital.
         It removes the possiblity of SQL injection.
         Instead of treating the input as individual characters,
           it looks at it as a single entire string.
         That way, if a devious person decides to use:
-        <pre>105; DROP TABLE Contacts</pre>
+        <pre>; DROP TABLE Contacts</pre>
         If this statement were to be run as an appended statement,
           there goes all your information.
         However if we parameterize there input,
-          They have now just saved a string that says "105; DROP TABLE Suppliers".
+          They have now just saved or searched for a string that says "; DROP TABLE Contacts".
       </p>
       <p>
         Another way to avoid SQL injection is using a "blacklist" set of words.
