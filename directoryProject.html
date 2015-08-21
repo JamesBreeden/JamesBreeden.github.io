@@ -204,10 +204,12 @@
       </div><!--end .accordion-->
       <p>
         One more important thing to note is that when using any SQL statements,
-          passing the new information in as parameters instead of appended SQL statements is vital.
-        It removes the possiblity of SQL injection.
-        Instead of treating the input as individual characters,
-          it looks at it as a single entire string.
+          passing the new information as parameters into stored procedures instead of appended SQL statements is vital.
+        The benefits are two fold,
+          it removes the possiblity of SQL injection 
+          and gives the ability to maintain the statements outside the application.
+        Parameterizing the input treats it as an entire string 
+          instead of looking at it as individual characters.
         That way, if a devious person decides to use:
         <pre>; DROP TABLE Contacts</pre>
         If this statement were to be run as an appended statement,
