@@ -57,7 +57,46 @@
           <a class="accordion-section-title" href="#accordion-2">The Button</a>
           <div id="accordion-2" class="accordion-section-content">
             <p>
-              Content
+              This project was dubbed "The Button" because of how simple it seemed.
+              When it began, it was a simple WinForm that had a single button.
+              It developed into more than that,
+                but its basic function was still the same.
+            </p>
+            <p>
+              What the team requested was a more secure way for the CCT team to access batch files.
+              What I created was an application that can access the batch files, error checks, 
+                and reports the result back to the user.
+              If there were any errors,
+                several events occur.
+            </p>
+            <p>
+              First event is the error gets written to a .txt file on the support's server.
+              Second event is the user is give the opportunity to communicate with support staff
+                via a Yes/No dialog box.
+              If the user selects yes, it will auto-populate an email with target, subject, 
+                and content to be sent to support staff.
+              If the user selects no, the program will go back to home screen without emailing support.
+            </p>
+            <p>
+              The error checking not only makes sure the batch file was successful,
+                but it also makes sure it exists.
+              By validating the existance of the batch file,
+                it helps with the user experience as well as helps support with troubleshooting.
+            </p>
+            <p>
+              One final feature I added in was the 
+                <a href="https://en.wikipedia.org/wiki/Konami_Code">Konami Code</a>.
+              I captured the key input from the keyboard, 
+                and if it matched up to the required sequence, the text on the button would change.
+              The text started out as a professional string such as "Execute Batch File,"
+                but when the Konami Code is entered, the program access an external .txt file, reads in the lines,
+                and uses a random number generator to select one and display it as the text on the button.
+            </p>
+            <p>
+              In the .txt file are various quotes from many different sources.
+              Some were from movies, some were from cartoons,
+                and some were from around the office.
+              All of this was done AFTER getting authorization ofcourse.
             </p>
           </div><!--end .accordion-section-content-->
         </div><!--end .accordion-section-->
