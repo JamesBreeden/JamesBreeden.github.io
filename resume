@@ -1,1 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>JamesBreeden.GitHub.io by JamesBreeden</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css?ver=5" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css?ver=1" media="screen">
+    <script src="scripts/jquery-1.11.3.min.js?ver=1"></script>
+    <script src="scripts/main.js?ver=3"></script>
+  </head> 
 <span>This can be made available by contacting me. Thank you. </span>
+</body>
+</html>
